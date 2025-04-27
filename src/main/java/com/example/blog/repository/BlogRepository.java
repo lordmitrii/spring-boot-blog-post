@@ -1,0 +1,15 @@
+package com.example.blog.repository;
+import com.example.blog.model.Blog;
+import java.util.List;
+
+
+public interface BlogRepository {
+    List<Blog> findAll(); // Fetch all blogs from the repository
+
+    Blog findById(Long id); // Fetch a blog by its ID
+
+    void save(Blog blog); // Save a new blog or update an existing one
+
+    void delete(Long id); // Delete a blog by its ID
+    
+}

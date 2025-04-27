@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Blog List</title>
+</head>
+<body>
+    <h1>All Blog Posts</h1>
+
+    <ul>
+        <li th:each="blog : ${blogs}">
+            <h2 th:text="${blog.title}">Blog Title</h2>
+            <p th:text="${blog.content}">Blog Content</p>
+            <p><strong>Author:</strong> <span th:text="${blog.author}">Author Name</span></p>
+            <p><strong>Date Published:</strong> <span th:text="${blog.datePublished}">Date</span></p>
+            <hr/>
+        </li>
+    </ul>
+
+</body>
+</html>
