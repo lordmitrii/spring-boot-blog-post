@@ -15,4 +15,11 @@ public class BlogService {
         return blogRepository.findAll();
     }
 
+    public void addBlog(Blog blog) {
+        blogRepository.save(blog);
+    }
+    public void deleteBlog(Long id) {
+        blogRepository.delete(id);
+    }
+
 }
