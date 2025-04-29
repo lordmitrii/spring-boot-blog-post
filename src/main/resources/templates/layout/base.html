@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="utf-8">
+  <title layout:fragment="title">MySite</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link th:href="@{/css/style.css}" rel="stylesheet"/>
+
+  <!-- page-level additions -->
+  <layout:fragment name="extraHead"/>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+  <header th:replace="~{fragments/header :: header}" class="bg-blue-600 text-white p-4 shadow-md">
+    <!-- Header content will be replaced here -->
+  </header>
+
+  <section layout:fragment="content" class="container mx-auto p-6 bg-white shadow-md rounded-md my-6">
+    Default body
+  </section>
+
+  <footer th:replace="~{fragments/footer :: footer}" class="bg-gray-800 text-white p-4 text-center">
+    <!-- Footer content will be replaced here -->
+  </footer>
+
+  <script th:src="@{/js/app.js}"></script>
+  <layout:fragment name="extraScripts"/>
+</body>
+</html>

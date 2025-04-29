@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base}">
+<head>
+    <title layout:fragment="title">Blog</title>
+</head>
+<body>
+    <section layout:fragment="content">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">All Blog Posts</h1>
+        
+        <ul class="space-y-6">
+            <li th:each="blog : ${blogs}" class="p-4 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                <h2 th:text="${blog.title}" class="text-xl font-semibold text-gray-900">Blog Title</h2>
+                <p th:text="${blog.content}" class="text-gray-700 mt-2">Blog Content</p>
+                <p class="text-gray-600 mt-2"><strong>Author:</strong> <span th:text="${blog.author}">Author Name</span></p>
+                <p class="text-gray-600"><strong>Date Published:</strong> <span th:text="${blog.datePublished}">Date</span></p>
+                <form th:action="@{/blog/delete/{id}(id=${blog.id})}" method="post" style="display:inline;" class="mt-4">
+                    <input type="hidden" name="_method" value="delete" />
+                    <button type="submit" class="text-red-500 hover:text-red-700 font-medium">Delete</button>
+                </form>
+            </li>
+        </ul>
+    </section>  
+</body>
+</html>

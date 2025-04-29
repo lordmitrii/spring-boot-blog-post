@@ -1,20 +1,12 @@
-.container {
-    display: flex;
-    justify-content: end;
-    align-items: center;
+body {
+    margin: 0;
+    padding: 0;
 }
 
-
-.button {
-    background-color: #000000;
-    border-radius: 10px;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
+nav {
+    display: flex;
+    height: 60px;
+    justify-content:end;
+    align-items: center;
+    border-bottom: 1px solid black;
 }

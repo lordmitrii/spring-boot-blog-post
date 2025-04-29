@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/base}">
+<head>
+  <title layout:fragment="title">Home</title>
+  <!-- <link layout:fragment="extraHead" th:href="@{/css/home.css}" rel="stylesheet"/> -->
+</head>
+<body>
+  <section layout:fragment="content">
+    <div class="flex flex-col items-center justify-center py-2">
+      <h1>Welcome to home html</h1>
+      <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" th:href="@{/blog/add}">
+        Add new blog!
+      </a>
+
+    </div>
+  </section>
+  <!-- <script layout:fragment="extraScripts" th:src="@{/js/home.js}"></script> -->
+</body>
+</html>
