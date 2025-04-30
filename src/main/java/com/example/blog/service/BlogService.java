@@ -15,6 +15,14 @@ public class BlogService {
         return blogRepository.findAll();
     }
 
+    public List<Blog> getLatestBlogs() {
+        return blogRepository.findTop5ByOrderByCreatedAtDesc();
+    }
+    
+    public Blog getBlogById(Long id) {
+        return blogRepository.findById(id);
+    }
+
     public void addBlog(Blog blog) {
         blogRepository.save(blog);
     }

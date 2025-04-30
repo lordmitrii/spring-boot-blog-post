@@ -32,6 +32,14 @@ public class InMemoryBlogRepository implements BlogRepository {
     public List<Blog> findAll() {
         return blogs;
     }
+
+    public List<Blog> findTop5ByOrderByCreatedAtDesc() {
+        return blogs.stream()
+                .sorted((b1, b2) -> b2.getDatePublished().compareTo(b1.getDatePublished()))
+                .limit(5)
+                .toList();
+    }
+
     public void save(Blog blog) {
         if (blog.getId() == null) { 
             blog.setId(nextId++);
