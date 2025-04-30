@@ -26,6 +26,11 @@ public class BlogService {
     public void addBlog(Blog blog) {
         blogRepository.save(blog);
     }
+
+    public void updateBlog(Blog blog) {
+        blogRepository.update(blog);
+    }
+
     public void deleteBlog(Long id) {
         blogRepository.delete(id);
     }

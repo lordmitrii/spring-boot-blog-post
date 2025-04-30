@@ -12,6 +12,8 @@ public interface BlogRepository {
 
     void save(Blog blog); // Save a new blog or update an existing one
 
+    void update(Blog blog); 
+
     void delete(Long id); // Delete a blog by its ID
     
 }

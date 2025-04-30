@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.example.blog.model.Blog;
 import com.example.blog.repository.BlogRepository;
@@ -34,7 +35,7 @@ public class BlogController {
     }
 
     @PostMapping("/blogs/add/")
-    public String addBlog(@ModelAttribute Blog blog) {
+    public String addBlog(@RequestBody Blog blog) {
         blogService.addBlog(blog);
         return "redirect:/blogs"; 
     }
@@ -61,10 +62,7 @@ public class BlogController {
 
     @PostMapping("/blogs/edit/{id}")
     public String editBlog(@PathVariable Long id, @ModelAttribute Blog blog) {
-        System.out.println("Editing blog with ID: " + id);
-        blogService.addBlog(blog);
-        blog.setId(id);
-        System.out.println("Blog updated: " + blog.getId());
+        blogService.updateBlog(blog);
         return "redirect:/blogs"; 
     }
 }
