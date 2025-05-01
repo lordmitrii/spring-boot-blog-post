@@ -33,7 +33,7 @@ public class InMemoryBlogRepository implements BlogRepository {
         return blogs;
     }
 
-    public List<Blog> findTop5ByOrderByCreatedAtDesc() {
+    public List<Blog> findTop5ByOrderByDatePublishedDesc() {
         return blogs.stream()
                 .sorted((b1, b2) -> b2.getDatePublished().compareTo(b1.getDatePublished()))
                 .limit(5)

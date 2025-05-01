@@ -16,7 +16,7 @@ public class BlogService {
     }
 
     public List<Blog> getLatestBlogs() {
-        return blogRepository.findTop5ByOrderByCreatedAtDesc();
+        return blogRepository.findTop5ByOrderByDatePublishedDesc();
     }
     
     public Blog getBlogById(Long id) {

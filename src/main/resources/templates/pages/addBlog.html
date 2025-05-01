@@ -8,7 +8,7 @@
 </head>
 <body>
     <section layout:fragment="content"> 
-      <form th:action="blog != null ? @{/blogs/edit/{id}(id=${blog.id})} : @{/blogs/add/}" method="post">
+      <form th:action="${blog != null} ? @{/blogs/edit/{id}(id=${blog.id})} : @{/blogs/add/}" method="post">
         <div class="mb-4">
             <label for="title" class="block text-gray-700 font-medium mb-2">Title:</label>
             <input type="text" id="title" name="title" required 
