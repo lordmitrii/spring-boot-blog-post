@@ -8,7 +8,7 @@ import nz.net.ultraq.thymeleaf.layoutdialect.LayoutDialect;
 
 
 @Configuration
-public class AppConfig {
+public class TemplatesConfig {
     @Bean
     public LayoutDialect layoutDialect() {
         return new LayoutDialect();

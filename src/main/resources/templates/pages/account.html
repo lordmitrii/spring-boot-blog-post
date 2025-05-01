@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout/base}">
+
+<head>
+    <title layout:fragment="title">Account</title>
+</head>
+<body>
+    <section layout:fragment="content">
+        <div class="mt-4 text-center">
+            <a th:href="@{/logout}" class="text-blue-500 hover:underline">Logout</a>
+        </div>
+    </section>
+</body>
+</html>
