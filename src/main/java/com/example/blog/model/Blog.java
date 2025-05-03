@@ -1,6 +1,8 @@
 package com.example.blog.model;
 
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,6 +33,6 @@ public class Blog {
 
     private String author;
 
-    private String datePublished;
+    private LocalDate datePublished;
 }
     

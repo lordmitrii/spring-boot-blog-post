@@ -14,10 +14,10 @@
         </a>
         <ul class="mt-4 space-y-4">
             <li th:each="blog : ${blogs}" class="p-4 bg-gray-100 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                <h2 th:text="${blog.title}" class="text-xl font-semibold text-gray-900">Blog Title</h2>
+                <a th:href="@{/blogs/{id}(id=${blog.id})}"><h2 th:text="${blog.title}" class="text-xl font-semibold text-gray-900">Blog Title</h2></a>
                 <p th:text="${blog.content}" class="text-gray-700 mt-2">Blog Content</p>
                 <p class="text-gray-600 mt-2"><strong>Author:</strong> <span th:text="${blog.author}">Author Name</span></p>
-                <p class="text-gray-600"><strong>Date Published:</strong> <span th:text="${blog.datePublished}">Date</span></p>
+                <p class="text-gray-600"><strong>Date Published:</strong> <span th:text="${#temporals.format(blog.datePublished, 'dd/MM/yyyy')}">Date</span></p>
                 <form th:action="@{/blogs/delete/{id}(id=${blog.id})}" method="post" style="display:inline;" class="mt-4">
                     <input type="hidden" name="_method" value="delete" />
                     <button type="submit" class="text-red-500 hover:text-red-700 font-medium">Delete</button>

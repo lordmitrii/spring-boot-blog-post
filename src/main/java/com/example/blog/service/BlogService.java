@@ -1,38 +1,13 @@
 package com.example.blog.service;
 
+import com.example.blog.dto.BlogDto;
 import java.util.List;
-import org.springframework.stereotype.Service;
-import com.example.blog.model.Blog;
-import com.example.blog.repository.BlogRepository;
-import lombok.RequiredArgsConstructor;
 
-@Service
-@RequiredArgsConstructor
-public class BlogService {
-    private final BlogRepository blogRepository;
-
-    public List<Blog> getAllBlogs() {
-        return blogRepository.findAll();
-    }
-
-    public List<Blog> getLatestBlogs() {
-        return blogRepository.findTop5ByOrderByDatePublishedDesc();
-    }
-    
-    public Blog getBlogById(Long id) {
-        return blogRepository.findById(id);
-    }
-
-    public void addBlog(Blog blog) {
-        blogRepository.save(blog);
-    }
-
-    public void updateBlog(Blog blog) {
-        blogRepository.update(blog);
-    }
-
-    public void deleteBlog(Long id) {
-        blogRepository.delete(id);
-    }
-
+public interface BlogService {
+    List<BlogDto> findAllBlogs();
+    List<BlogDto> findLatestFiveBlogs();
+    BlogDto findBlogById(Long id);
+    void createBlog(BlogDto blogDto);
+    void updateBlog(BlogDto blogDto);
+    void deleteBlog(Long id);
 }

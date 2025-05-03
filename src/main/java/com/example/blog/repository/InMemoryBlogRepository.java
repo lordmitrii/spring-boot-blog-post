@@ -1,8 +1,10 @@
 package com.example.blog.repository;
 
 import java.util.List;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
+import org.springframework.cglib.core.Local;
 import org.springframework.stereotype.Repository;
 import com.example.blog.model.Blog;
 
@@ -16,13 +18,13 @@ public class InMemoryBlogRepository implements BlogRepository {
                 .title("First Blog")
                 .content("This is the content of the first blog.")
                 .author("Author 1")
-                .datePublished("2023-10-01")
+                .datePublished(LocalDate.of(2023, 10, 01))
                 .build();
         Blog blog2 = Blog.builder()
                 .title("Second Blog")
                 .content("This is the content of the second blog.")
                 .author("Author 2")
-                .datePublished("2023-10-02")
+                .datePublished(LocalDate.of(2023, 10, 02))
                 .build();
 
         this.save(blog1);
