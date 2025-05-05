@@ -3,12 +3,12 @@ package com.example.blog.repository;
 import com.example.blog.model.Blog;
 
 import org.springframework.context.annotation.Primary;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Primary
+@Profile("prod")
 @Repository
 public class H2BlogRepository implements BlogRepository {
 

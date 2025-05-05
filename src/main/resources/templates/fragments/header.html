@@ -5,7 +5,9 @@
       <div class="flex space-x-4">
         <a class="text-gray-700 hover:text-blue-600 font-medium transition-colors" th:href="@{/}">Home</a>
         <a class="text-gray-700 hover:text-blue-600 font-medium transition-colors" th:href="@{/blogs}">Blogs</a>
-        <a class="text-gray-700 hover:text-blue-600 font-medium transition-colors" th:href="@{/login}">Log In</a>
+        
+        <a th:if="${currentUser != null}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" th:href="@{/logout}">Log Out</a>
+        <a th:unless="${currentUser != null}" class="text-gray-700 hover:text-blue-600 font-medium transition-colors" th:href="@{/login}">Log In</a>
       </div>
     </div>
   </nav>

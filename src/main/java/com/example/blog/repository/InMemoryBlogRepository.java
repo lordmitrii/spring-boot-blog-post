@@ -4,10 +4,11 @@ import java.util.List;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-import org.springframework.cglib.core.Local;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 import com.example.blog.model.Blog;
 
+@Profile("dev")
 @Repository
 public class InMemoryBlogRepository implements BlogRepository {
     private List<Blog> blogs = new ArrayList<>();
